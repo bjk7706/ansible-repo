@@ -8,4 +8,4 @@
   file: path={{ ansible_env["HOME"]}}/ads state="directory"
 
 - name: Checkout a repo
-  git: repo=git@github.com:bjk7706/ansible-repo.git dest={{ ansible_env["HOME"]}}/ansible-repo
+  git: repo=git@github.com:bjk7706/ansible-repo.git dest={{ ansible_env["HOME"]}}/ansible-repo accept_key=true
