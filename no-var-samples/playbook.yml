@@ -1,0 +1,38 @@
+# Playbook to setup the ubuntu developer environment
+---
+- hosts: ubuntu-servers
+  tasks:
+    - name: Install Required Packages
+      apt: name="{{ item  }}" state=latest  install_recommends=yes
+      with_items:
+        - openjdk-7-jdk
+        - openjdk-7-jre
+        - curl
+        - maven
+        - tomcat7
+        - mysql-server
+        - nodejs
+
+
+    - name: Create Maven config directory
+      file: path="{{ ansible_env.HOME  }}/.m2" state="directory"
+
+    - name: Ensure Maven is configured
+      template: src=settings.xml dest="{{ ansible_env.HOME }}/.m2/settings.xml" backup=yes
+
+    - name: Install Npm
+      apt: name="{{ item }}" state=present install_recommends=yes
+      with_items:
+        - npm 
+
+    - name: Update Npm
+      npm: name=npm global=yes state=latest
+
+    - name: Symlink Node to NodeJs
+      command: 'ln -s /usr/bin/nodejs /usr/bin/node' 
+
+    - name: Install bower
+      npm: name=bower global=yes state=latest
+
+    - name: Install s3cmd
+      pip: name=s3cmd state=latest
