@@ -1,0 +1,24 @@
+---
+# File: roles_example/roles/aws-s3/tasks/main.yml
+
+- name: Get log.txt from ansible-repo-bucket bucket
+  s3: bucket=ansible-repo-bucket21534 
+      object=log.txt 
+      dest=log.txt 
+      mode=get 
+      aws_access_key=AKIAJG5M2ISF4PROGHHQ 
+      aws_secret_key=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
+
+- name: Apppend log file
+  shell: echo Adding a new line >> log.txt
+
+- name: PUT log.txt in ansible-repo-bucket bucket
+  s3: bucket=ansible-repo-bucket21534 
+      object=log.txt 
+      src=log.txt 
+      mode=put 
+      aws_access_key=AKIAJG5M2ISF4PROGHHQ 
+      aws_secret_key=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
+
+- name: Remove log.txt from local directory
+  shell: rm log.txt

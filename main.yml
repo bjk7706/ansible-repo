@@ -1,0 +1,14 @@
+---
+# File: roles_example/main.yml
+
+- name: Checkout a repo on an EC2 instance
+  hosts: aws-ec2
+  connection: local
+  roles:
+    - aws-ec2
+
+- name: Append a log file in an S3 bucket
+  hosts: local
+  connection: local
+  roles:
+    - aws-s3

@@ -1,0 +1,11 @@
+---
+# File: roles_example/roles/aws-ec2/tasks/main.yml
+
+- name: Install Git
+  apt: pkg=git state=latest
+
+- name: Create a directory
+  file: path={{ ansible_env["HOME"]}}/ads state="directory"
+
+- name: Checkout a repo
+  git: repo=git@github.com:bjk7706/ansible-repo.git dest={{ ansible_env["HOME"]}}/ansible-repo

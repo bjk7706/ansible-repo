@@ -1,0 +1,7 @@
+# File: roles_example/hosts
+
+[local]
+localhost
+
+[aws-ec2]
+54.218.18.248
