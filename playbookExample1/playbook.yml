@@ -1,0 +1,10 @@
+---
+
+- hosts: test
+  sudo: True 
+  tasks:
+    - name: Install Git
+      yum: name=git state=latest
+
+    - name: Replace git configuration file
+      copy: src="files/.gitconfig" dest="{{ ansible_env.HOME }}/.gitconfig"
