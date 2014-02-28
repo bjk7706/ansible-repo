@@ -1,0 +1,16 @@
+localhost
+
+[app-servers]
+54.201.174.4
+54.213.240.33
+
+[proxy-servers]
+54.200.38.252
+54.213.87.163
+
+[all-servers:children]
+app-servers
+proxy-servers
+
+
+
