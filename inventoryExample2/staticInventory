@@ -1,12 +1,12 @@
 localhost
 
 [app-servers]
-54.201.174.4
-54.213.240.33
+xx.xxx.xx.xx
+xx.xxx.xxx.xx
 
 [proxy-servers]
-54.200.38.252
-54.213.87.163
+xx.xx.xx.xx
+xx.xx.xx.xx
 
 [all-servers:children]
 app-servers

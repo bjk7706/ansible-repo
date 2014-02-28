@@ -1,16 +1,16 @@
 localhost
 
-[aws-ec2]
-54.201.174.4
-54.213.240.33
-54.200.38.252
+[app-servers]
+xx.xxx.xx.xx
+xx.xxx.xxx.xx
 
-[aws-s3]
-54.213.87.163
+[proxy-servers]
+xx.xx.xx.xx
+xx.xx.xx.xx
 
 [all-servers:children]
-aws-ec2
-aws-s3
+app-servers
+proxy-servers
 
 
 
