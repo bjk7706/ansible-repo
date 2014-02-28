@@ -1,6 +1,6 @@
 ---
 
-- hosts: test
+- hosts: all-servers
   sudo: True 
   tasks:
     - name: Install Git

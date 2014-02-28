@@ -11,10 +11,6 @@ localhost
 [all-servers:children]
 app-servers
 proxy-servers
-test
-
-[test]
-54.201.188.14
 
 
 
