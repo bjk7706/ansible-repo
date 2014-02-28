@@ -1,0 +1,16 @@
+localhost
+
+[aws-ec2]
+54.201.174.4
+54.213.240.33
+54.200.38.252
+
+[aws-s3]
+54.213.87.163
+
+[all-servers:children]
+aws-ec2
+aws-s3
+
+
+

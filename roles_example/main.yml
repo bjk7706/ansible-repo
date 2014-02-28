@@ -1,0 +1,14 @@
+---
+# File: roles_example/main.yml
+
+- name: Checkout a repo on an EC2 instance
+  hosts: aws-ec2
+  sudo: True
+  roles:
+    - aws-ec2
+
+- name: Append a log file in an S3 bucket
+  hosts: aws-s3
+  sudo: True
+  roles:
+    - aws-s3
